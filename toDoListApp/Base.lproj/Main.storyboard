@@ -41,7 +41,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PMm-aa-3Vm">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="D14-eb-VU5"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="D14-eb-VU5">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="LKc-FC-zfS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="1ym-Lk-e7r" id="fAM-ac-IL5"/>
@@ -51,31 +55,67 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="Sy8-tn-IUt">
             <objects>
-                <viewController id="tA1-q5-Eb4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="entry" id="tA1-q5-Eb4" customClass="EntryViewController" customModule="toDoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1S-aX-kXx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7NC-eq-ufi">
+                                <rect key="frame" x="20" y="64" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="lHo-um-rT6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2uJ-FO-uLL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2uJ-FO-uLL" firstAttribute="trailing" secondItem="7NC-eq-ufi" secondAttribute="trailing" constant="20" id="32h-en-sMs"/>
+                            <constraint firstItem="2uJ-FO-uLL" firstAttribute="bottom" secondItem="7NC-eq-ufi" secondAttribute="bottom" constant="703" id="Btk-cO-FgA"/>
+                            <constraint firstItem="7NC-eq-ufi" firstAttribute="top" secondItem="2uJ-FO-uLL" secondAttribute="top" constant="20" id="JFM-rC-w9p"/>
+                            <constraint firstItem="7NC-eq-ufi" firstAttribute="leading" secondItem="2uJ-FO-uLL" secondAttribute="leading" constant="20" id="Vin-HJ-CQM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="field" destination="7NC-eq-ufi" id="Xsx-R1-EZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJb-MQ-d3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="929" y="751"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="RT3-uk-3xA">
             <objects>
-                <viewController id="JdS-Jk-6dg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="task" id="JdS-Jk-6dg" customClass="TaskViewController" customModule="toDoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H3H-b0-dWH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hn-gc-zCG">
+                                <rect key="frame" x="12" y="56" width="390" height="794"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MYC-vS-oIg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MYC-vS-oIg" firstAttribute="trailing" secondItem="2Hn-gc-zCG" secondAttribute="trailing" constant="12" id="Fed-ib-Xve"/>
+                            <constraint firstItem="2Hn-gc-zCG" firstAttribute="leading" secondItem="MYC-vS-oIg" secondAttribute="leading" constant="12" id="S3I-XC-mZu"/>
+                            <constraint firstItem="2Hn-gc-zCG" firstAttribute="top" secondItem="MYC-vS-oIg" secondAttribute="top" constant="12" id="ff5-Ba-RP1"/>
+                            <constraint firstItem="MYC-vS-oIg" firstAttribute="bottom" secondItem="2Hn-gc-zCG" secondAttribute="bottom" constant="12" id="qZI-36-lf7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="2Hn-gc-zCG" id="8uH-nu-kDJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiW-oa-GEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
