@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol TaskViewControllerDelegate: AnyObject {
+    func deleteTask(row: Int)
+}
+
 class TaskViewController: UIViewController {
     
     @IBOutlet var label: UILabel!
+    weak var delegate: TaskViewControllerDelegate?
     
     var task: String?
+    var currentPosition: Int = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,16 +28,10 @@ class TaskViewController: UIViewController {
 
         
     }
-    
-    @objc func deleteTask() {
-        
-//        let newCount = count - 1
-//        
-//        UserDefaults().setValue(newCount, forKey: "count")
-//        UserDefaults().setValue(nil, forKey: "task_\(currentPosition)")
+
+    @objc
+    func deleteTask() {
+        delegate?.deleteTask(row: currentPosition)
+        navigationController?.popViewController(animated: true)
     }
-    
-
-    
-
 }
