@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol EntryViewControllerDelegate: AnyObject {
+    func saveTask(text: String)
+}
+
 class EntryViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var field: UITextField!
@@ -45,7 +49,18 @@ class EntryViewController: UIViewController, UITextFieldDelegate {
         
         navigationController?.popViewController(animated: true)
     }
-
-    
-
 }
+
+extension ViewController: EntryViewControllerDelegate {
+    func saveTask(text: String) {
+        let defaults = UserDefaults.standard
+        var tasks = defaults.stringArray(forKey: "tasks") ?? [String]()
+        tasks.append(text)
+
+        defaults.set(tasks, forKey: "tasks")
+
+        updateTasks()
+        tableView.reloadData()
+    }
+}
+

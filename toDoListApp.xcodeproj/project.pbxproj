@@ -63,12 +63,12 @@
 				847F888628A19E2B009414F5 /* AppDelegate.swift */,
 				847F888828A19E2B009414F5 /* SceneDelegate.swift */,
 				847F888A28A19E2B009414F5 /* ViewController.swift */,
+				847F889A28A1D88D009414F5 /* EntryViewController.swift */,
+				847F889C28A1D947009414F5 /* TaskViewController.swift */,
 				847F888C28A19E2B009414F5 /* Main.storyboard */,
 				847F888F28A19E30009414F5 /* Assets.xcassets */,
 				847F889128A19E30009414F5 /* LaunchScreen.storyboard */,
 				847F889428A19E30009414F5 /* Info.plist */,
-				847F889A28A1D88D009414F5 /* EntryViewController.swift */,
-				847F889C28A1D947009414F5 /* TaskViewController.swift */,
 			);
 			path = toDoListApp;
 			sourceTree = "<group>";
